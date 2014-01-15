@@ -47,14 +47,15 @@ config = {
         url: 'http://blog.ruby-journal.com',
         mail: {},
         database: {
-				    client: 'postgres',
+				    client: 'pg',
             connection: {
                 host: process.env.POSTGRES_HOST,
                 user: process.env.POSTGRES_USER,
                 password: process.env.POSTGRES_PASSWORD,
                 database: process.env.POSTGRES_DATABASE,
                 port: '5432'
-            }
+            },
+            debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
