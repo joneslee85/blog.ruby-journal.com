@@ -26,17 +26,17 @@ config = {
         // ```
 
         database: {
-            client: 'postgres',
+            client: 'sqlite3',
             connection: {
-                connection: process.env.DATABASE_URL,
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
             debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '0.0.0.0',
+            host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: process.env.PORT
+            port: '2368'
         }
     },
 
@@ -47,7 +47,7 @@ config = {
         url: 'http://blog.ruby-journal.com',
         mail: {},
         database: {
-				    client: 'postgres',
+				    client: 'pg',
             connection: {
                 host: process.env.POSTGRES_HOST,
                 user: process.env.POSTGRES_USER,
