@@ -44,14 +44,17 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://ruby-journal.com',
+        url: 'http://blog.ruby-journal.com',
         mail: {},
         database: {
-            host: process.env.POSTGRES_HOST,
-            user: process.env.POSTGRES_USER,
-            password: process.env.POSTGRES_PASSWORD,
-            database: process.env.POSTGRES_DATABASE,
-            port: '5432'
+				    client: 'postgres',
+            connection: {
+                host: process.env.POSTGRES_HOST,
+                user: process.env.POSTGRES_USER,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                port: '5432'
+            }
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
